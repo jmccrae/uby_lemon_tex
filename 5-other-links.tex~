@@ -1,0 +1,48 @@
+\section{Linking with terminology repositories}
+
+\begin{verbatim}
+- mapping Uby categories to OLiA (1 sec)-> JEK&CC
+\end{verbatim}
+
+Uby currently linked to ISOcat
+
+LLOD terminology repositories:
+The General Ontology of Linguistic Description (GOLD)\footnote{\url{http://linguistics-ontology.org/}} 
+is an ontology for descriptive linguistics and focuses on formalizing definitions
+for morphosyntactic categories \cite{farrar2003linguistic}. It is an attempt to 
+codify general knowledge about the field of linguistics with the goal of facilitating 
+automated reasoning over linguistic data and it provides a large number of URIs for 
+linguistic resources to use for terminology resolution. GOLD does currently not contain
+an explicit license statement, but it is available online, and as a community project,
+publication under an open license can be expected. A similar problem persists 
+with ISOcat that aims to assemble data categories relevant for linguistic resources, 
+including annotation, metadata, etc. \cite{kemps2008isocat}. At the moment, the
+content of ISOcat is available, but no explicit license is given. However, people
+involved (Menzo Windhouwer, p.c., June 2012) believe that a publication under 
+an open license would be appreciated, but it has not been clarified whether the
+restrictive licensing policy of the ISO that applies to the ISOcat technical 
+specifications also extends to the ISOcat data categories.
+
+The Ontologies of Linguistic Annotation (OLiA) represent a repository of annotation 
+terminology for various linguistic phenomena currently applied to about 70 languages 
+\cite{chiarcos2008ontology,chiarcos2012ontologies}. The OLiA ontologies were 
+developed as part of an infrastructure for the sustainable maintenance of 
+linguistic resources \cite{schmidt2006avoiding}, and their primary fields of 
+application include the formalization of annotation schemes and concept-based 
+querying over heterogeneously annotated corpora \cite{rehm2008ontology}, although
+recently, a broader application, especially in Natural Language Processing, 
+has been suggested \cite{chiarcos2012ontologies}.
+
+In a Linked Data context, the OLiA ontologies act as a central reference hub for
+linguistic annotations, in that they provide formal definitions of annotation 
+schemes as OWL/DL ontologies. Further, OLiA establishes interoperability between
+different annotation schemes by linking them to an overarching `Reference Model'.
+Through the OLiA Reference Model, interoperability with community-maintained data
+category registries can be achieved, because it is linked to the General Ontology
+of Linguistic Description \cite[GOLD]{farrar2003markup} and to an OWL/DL 
+representation of the morphosyntactic profile of the ISO TC37/SC4 Data 
+Category Registry \cite[ISOcat]{kemps2008isocat}.
+
+... linking
+
+

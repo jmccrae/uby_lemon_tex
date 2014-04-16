@@ -1,0 +1,8 @@
+\section{Conclusion}
+
+We have presented a new linked data resource called \emph{lemonUby}, which
+combines the data from the UBY lexicon with the principled model, \emph{lemon},
+for representing lexical data on the web. This resource provides not only a
+rich information about many lexical entries in two languages, it is also
+significantly linked both within its component resources and also to other
+lexical resources and meta-data repositories on the web. 
