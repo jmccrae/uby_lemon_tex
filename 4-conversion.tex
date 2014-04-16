@@ -1,5 +1,24 @@
 \section{Converting UBY lexica to  \emph{lemon}: \emph{le\-mon\-U\-by}}
 
+\begin{table}
+  \begin{tabular}{|p{3cm}|cc|}
+    \hline
+    \emph{lemonUby} Resource & Triples & Links\\
+    \hline
+    WordNet & 5,102,744 & 196,420 \\
+    VerbNet & 570,256 & 24,425\\
+    FrameNet & 1,110,763 & 61,070 \\
+    OmegaWiki English & 6,173,515 & 113,930\\
+    OmegaWiki German & 5,310,551 & 159,978\\
+    Wiktionary German & 4,766,917 & - \\
+    Wiktionary English & 9,881,730 & 99,797\\
+    \hline
+  Total & 32,916,476 & 327,810 \\
+    \hline
+  \end{tabular}
+  \caption{Number of triples and links for each resource.\label{triples}}
+ \end{table}
+
 \noindent 
 To automatically convert data from UBY-LMF (extracted from UBY) to  \emph{lemon},
 we performed a mapping of UBY-LMF elements to \emph{lemon} concepts and properties.
@@ -40,7 +59,10 @@ at the level of linguistic data categories.
 However, ISOcat is not a formal ontology, but only a semistructured collection of terms, and while it serves as a 
 repository of definitions, it does not provide a formal data model that can be applied to a resource: 
 ISOcat contains doublets created by different data providers, %e.g., VoiceProperty [DC-3551] vs. voice [DC-1433], 
-and such superficially similar categories may actually have incompatible definitions, e.g., gerundive [DC-1294] is an ``adjective formed from a verb'' (excluding verbal nouns), whereas gerundive [DC-2243] is a ``non-finite form (...) other than the infinitive'' (including verbal nouns). Hierarchical relations between ISOcat terms are possible, but not obligatory, and when compared with a full-fledged ontology, ISOcat terms that represent superconcepts for a bundle of features (e.g., ActiveVoice [DC-3064] dcif:isA VoiceProperty [DC-3551]) do not distinguish relational and categorial aspects: VoiceProperty could be either a property that assigns ActiveVoice to a particular unit of annotation, or a concept that defines the range of such a relation.
+and such superficially similar categories may actually have incompatible definitions, e.g., gerundive [DC-1294] is an ``adjective formed from a verb'' (excluding verbal nouns), whereas gerundive [DC-2243] is a ``non-finite form (...) other than the infinitive'' (including verbal nouns). Hierarchical relations between ISOcat terms are possible, but not obligatory, and when compared with a full-fledged ontology, ISOcat terms that represent superconcepts for a bundle of features 
+%(e.g., ActiveVoice [DC-3064] dcif:isA VoiceProperty [DC-3551]) 
+do not distinguish relational and categorial aspects.
+%VoiceProperty could be either a property that assigns ActiveVoice to a particular unit of annotation, or a concept that defines the range of such a relation.
 
 To render UBY/ISOcat data categories in a formal data model, we created the OWL/DL 
 ontology \emph{ubyCat}\footnote{\url{http://purl.org/olia/ubyCat.owl}} which defines the semantics of
@@ -153,6 +175,9 @@ Translations to other human languages which are encoded as string-valued lexical
 are mapped as a datatype property on the sense, in line with the UBY representation \cite{TC32012} rather than
 attempting to construct a cross-lingual linking for these terms as in the original resources
 (Ome\-ga\-Wi\-ki and Wiktionary).
+Finally, provenance information is added to each resource at the root URL, including the source resource and version, time
+of creation and a link to the FOAF profile of the executor. Further examples of usage and modelling are available
+from the website~\footnote{e.g., \url{http://lemon-model.net/lexica/uby/modelling.php} or \url{http://lemon-model.net/learn/learn.php}}.
 % The hierarchic organisation of VerbNet classes is thus lost, but this can be
 % reconstructed by means of an axiomatic description of subcategorization frames in
 % order to create a hierarchy similar as in the LexInfo linguistic
@@ -204,21 +229,5 @@ attempting to construct a cross-lingual linking for these terms as in the origin
 %relationship between sense and syntactic behaviour can not be recovered for LR which do not specify
 %semantic arguments, e.g., GermaNet.
 
-\begin{table}
-  \begin{tabular}{|p{3cm}|cc|}
-    \hline
-    \emph{lemonUby} Resource & Triples & Links\\
-    \hline
-    WordNet & 5,102,744 & 196,420 \\
-    VerbNet & 570,256 & 24,425\\
-    FrameNet & 1,110,763 & 61,070 \\
-    OmegaWiki English & 6,173,515 & 113,930\\
-    OmegaWiki German & 5,310,551 & 159,978\\
-    Wiktionary German & 4,766,917 & - \\
-    Wiktionary English & 9,881,730 & 99,797\\
-    \hline
-  Total & 32,916,476 & 327,810 \\
-    \hline
-  \end{tabular}
-  \caption{Number of triples and links for each resource.\label{triples}}
- \end{table}
+
+
